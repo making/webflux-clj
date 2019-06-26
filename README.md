@@ -17,10 +17,11 @@ lein repl
 
 ```clojure
 (def disposable (let [server (http-server 
-                 (routes 
-                   (GET "/" (handler (fn [req] (-> (ServerResponse/ok) (.syncBody "Hello GET!!")))))
-                   (POST "/" (handler (fn [req] (-> (ServerResponse/ok) (.syncBody "Hello POST!!")))))))]
-    (.bindNow server)))
+  (routes 
+    (GET "/" (handler (fn [req] (-> (ServerResponse/ok) (.syncBody "Hello GET!!")))))
+    (POST "/" (handler (fn [req] (-> (ServerResponse/ok) (.syncBody "Hello POST!!")))))))]
+    
+  (.bindNow server)))
 
 ; curl localhost:8080
 
