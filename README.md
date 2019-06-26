@@ -2,10 +2,6 @@
 
 Spring WebFlux.fn in Clojure
 
-```
-brew install leiningen
-```
-
 ## Usage
 
 ```
@@ -19,7 +15,7 @@ brew install leiningen
 lein repl
 ```
 
-```lisp
+```clojure
 (def disposable (let [server (http-server 
                  (routes 
                    (GET "/" (handler (fn [req] (-> (ServerResponse/ok) (.syncBody "Hello GET!!")))))
